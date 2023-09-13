@@ -61,7 +61,7 @@ function displayForecast(response) {
 function getForecast(coords) {
   console.log(coords);
   let apiKey = "efa95fd2aa3co217t49d0b70baa77090";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=9.0643305&lon=7.4892974&key=efa95fd2aa3co217t49d0b70baa77090&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coords.latitude}&lon=${coords.longitude}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 function displayTemperature(response) {
@@ -89,7 +89,7 @@ function displayTemperature(response) {
 }
 function search(city) {
   let apiKey = "efa95fd2aa3co217t49d0b70baa77090";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Abuja&key=efa95fd2aa3co217t49d0b70baa77090&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
 function handleSubmit(event) {
