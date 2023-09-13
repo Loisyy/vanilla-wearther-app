@@ -36,16 +36,18 @@ function displayForecast(response) {
         forecastHTML +
         `
       <div class="col-2">
-        <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+        <div class="weather-forecast-date text-white">${formatDay(
+          forecastDay.time
+        )}</div>
         <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
-          forecastDay.condition.icon_url
+          forecastDay.condition.icon
         }.png"
           alt=""width="45"/>
         <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max"> ${Math.round(
+          <span class="weather-forecast-temperature-max text-white"> ${Math.round(
             forecastDay.temperature.maximum
           )}° </span>
-          <span class="weather-forecast-temperature-min"> ${Math.round(
+          <span class="weather-forecast-temperature-min text-white opacity-50"> ${Math.round(
             forecastDay.temperature.minimum
           )}° </span>
         </div>
@@ -71,18 +73,16 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
 
-  celsiusTemperature = response.data.main.temp;
-  let celsiusTemperature = response.data.main.temp;
-
+  celsiusTemperature = response.data.temperature.current;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  cityElement.innerHTML = response.data.name;
-  descriptionElement.innerHTML = response.data.weather[0].description;
-  humidityElement.innerHTML = response.data.main.humidity;
+  cityElement.innerHTML = response.data.city;
+  descriptionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  dateElement.innerHTML = formatDate(response.data.time * 1000);
   iconElement.setAttribute(
     "src",
-    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon_url}.png`
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   iconElement.setAttribute("alt", response.data.condition.description);
   getForecast(response.data.coordinates);
@@ -119,4 +119,5 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
 search("Abuja");

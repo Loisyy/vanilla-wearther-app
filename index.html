@@ -10,7 +10,7 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
- <link rel="stylesheet" href="./src/styles.css">
+    <link rel="stylesheet" href="./src/styles.css">
     <title>Document</title>
 </head>
 
@@ -20,7 +20,7 @@
             <div class="weather-app">
                 <form id="search-form" class="mb-3">
                     <div class="row">
-                        <div class="col-9">
+                        <div class="col-6">
                             <input type="search" placeholder=" type a city to search" class="form-control"
                                 id="city-input" autocomplete="off" />
                         </div>
@@ -29,6 +29,7 @@
                 </form>
             </div>
         </div>
+        
         <div class="overview">
             <h1 id="city"></h1>
             <ul>
@@ -45,20 +46,20 @@
                     <img src="" alt="" id="icon" class="float-left" />
                     <div class="float-left">
                         <strong id="temperature"></strong>
-                        <span class="units"><a href="#" id="celsius-link" class="unitc active">&deg;C</a> | <a href="#"
-                                id="fahrenheit-link" class="unit"> &deg;F</a></span>
+                        <span class="units"><a href="#" id="celsius-link" class="unitc active text-white">&deg;C</a> |
+                            <a href="#" id="fahrenheit-link" class="unit"> &deg;F</a></span>
                     </div>
                 </div>
             </div>
-             </div>
+        </div>
 
-            <div class="col 6 items">
-                <ul>
-                    <li>Humidity: <span id="humidity"></span>%</li>
-                    <li>Wind: <span id="wind"></span>km/h</li>
-                </ul>
-            </div>
-       
+        <div class="col 6 items">
+            <ul>
+                <li style="font-weight: bolder;">Humidity: <span id="humidity"></span>%</li>
+                <li style="font-weight: bolder;">Wind: <span id="wind"></span>km/h</li>
+            </ul>
+        </div>
+
         <div class="weather-forecast" id="forecast">
             <div class="row">
                 <div class="col-2">

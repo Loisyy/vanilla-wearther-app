@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-    color: gray;
+    color: rgb(251, 251, 251);
     font-size: 24px;
     font-weight: 100;
     line-height: 28px;
@@ -19,7 +19,7 @@ li {
     margin: 0;
     padding: 0;
     list-style: none;
-    color: gray;
+    color:  rgb(251, 251, 251);
     font-size: 16px;
     font-weight: 100;
     line-height: 19px;
@@ -31,13 +31,16 @@ li:first-letter {
 
 .weather-app-wrapper {
     max-width: 600px;
-    margin: 30px auto;
+    margin: 50px auto;
+    margin-bottom: 2px;
 }
 
 .weather-app {
     padding: 20px;
-    border: 1px solid blueviolet;
+    padding-right: 0px;
+    border: 1px solid wh;
     border-radius: 5px;
+    background-image: url('./image/weatherimage.avif');
 }
 
 .overview {
@@ -57,7 +60,7 @@ li:first-letter {
 }
 
 .weather-temperature strong {
-    color: blueviolet;
+    color:white;
     font-size: 64px;
     font-weight: 400;
     line-height: 1;
@@ -68,17 +71,32 @@ li:first-letter {
     font-size: 16;
     top: -34px;
 }
+.unit {
+    text-decoration: none;
+    cursor: default;
+}
+.unitc {
+    text-decoration: none;
+    cursor: default;
+}
+
+.unit .active {
+    cursor: default;
+    text-decoration: none;
+}
+
+.unit .active:hover {
+    text-decoration: none;
+    cursor: default;
+}
 
 .items {
     float: right;
     position: relative;
     top: -75px;
-    left: -100px;
-}
-
-small {
-    margin-left: 260px;
+    left: -50px;
 }
 .githublink{
     text-decoration: none;
+    margin-left: 170px;
 }
