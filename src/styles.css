@@ -2,6 +2,19 @@ body {
     font-family: arial, sans-serif;
 }
 
+#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+
 h1 {
     color: rgb(251, 251, 251);
     font-size: 24px;
@@ -19,7 +32,7 @@ li {
     margin: 0;
     padding: 0;
     list-style: none;
-    color:  rgb(251, 251, 251);
+    color: rgb(251, 251, 251);
     font-size: 16px;
     font-weight: 100;
     line-height: 19px;
@@ -40,13 +53,31 @@ li:first-letter {
     padding-right: 20px;
     border: 1px solid wh;
     border-radius: 5px;
-    background-image: url('./image/weatherimage.avif');
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.btn{
+.btn {
     background-color: aliceblue;
-color: rgb(1, 1, 83);
+    color: rgb(1, 1, 83);
 }
+
+.btn-primary {
+    background-color: rgb(1, 1, 83);
+    border-color: white;
+}
+
+/* Applying a new class to the button */
+.custom-primary-btn {
+    background-color: rgb(2, 81, 26);
+    border-color: rgb(2, 81, 26);
+}
+
+/* Change the text color for better contrast */
+.btn-primary,
+.custom-primary-btn {
+    color: white;
+}
+
 .overview {
     margin-bottom: 20px;
 }
@@ -64,7 +95,7 @@ color: rgb(1, 1, 83);
 }
 
 .weather-temperature strong {
-    color:white;
+    color: white;
     font-size: 64px;
     font-weight: 400;
     line-height: 1;
@@ -75,10 +106,12 @@ color: rgb(1, 1, 83);
     font-size: 16;
     top: -34px;
 }
+
 .unit {
     text-decoration: none;
     cursor: default;
 }
+
 .unitc {
     text-decoration: none;
     cursor: default;
@@ -100,7 +133,9 @@ color: rgb(1, 1, 83);
     top: -75px;
     left: -50px;
 }
-.githublink{
+
+.githublink {
     text-decoration: none;
     margin-left: 170px;
+    color: blue
 }

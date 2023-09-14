@@ -15,10 +15,13 @@
 </head>
 
 <body>
+    <video id="background-video" autoplay loop muted>
+        <source src="./src/image/stock-footage-summer-sky-time-lapse-sun-shining-and-moving-tree.webm" type="video/mp4">
+    </video>
     <div class="container first-letter">
         <div class="weather-app-wrapper">
             <div class="weather-app">
-                    <div class="row">
+                <div class="row">
                     <form id="search-form" class="mb-3">
                         <div class="row">
                             <div class="col-6">
@@ -26,12 +29,13 @@
                                     id="city-input" autocomplete="off" />
                             </div>
                             <div class="col-3">
-                                <input type="submit" value="search" class="btn btn-primary w-100" />
+                                <input type="submit" value="search" class="btn btn-primary custom-primary-btn w-100" />
                     </form>
                 </div>
 
                 <div class="col-3">
-                    <button class="btn btn-success w-100" id="current-location-button">
+                    <button class="btn btn-primary custom-primary-btn w-100" id="current-location-button"
+                        aria-placeholder="current Location">
                         Current
                     </button>
                 </div>
